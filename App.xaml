@@ -1,0 +1,14 @@
+﻿<Application x:Class="Anime_List_App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Anime_List_App"
+             StartupUri="MVVM\View\Windows\AutorizationWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ResourceDictionary/TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="ResourceDictionary/ToolBarDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
