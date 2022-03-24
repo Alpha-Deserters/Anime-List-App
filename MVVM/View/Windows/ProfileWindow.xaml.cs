@@ -1,4 +1,7 @@
-﻿using Anime_List_App.Core.Model;
+﻿using Anime_List_App.Core.Interfaces;
+using Anime_List_App.Core.Model;
+using Anime_List_App.Core.StaticClasses;
+using Anime_List_App.MVVM.View.UC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +23,15 @@ namespace Anime_List_App.MVVM.View.Windows
     /// </summary>
     public partial class ProfileWindow : Window
     {
-        private User? _user;
+        private User? _user;   
+
         public ProfileWindow(User user)
         {
-            InitializeComponent();
+            InitializeComponent();           
             _user = user;
+            //_frameControl = new FrameControl();
+           // _frameControl.SetWidnow(this);
+            ScreenFrame.Navigate(new ProfileControl());// init base frame
         }
     }
 }

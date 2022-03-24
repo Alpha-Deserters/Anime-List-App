@@ -1,5 +1,5 @@
-﻿using Anime_List_App.Core.ExtensionClasses;
-using Anime_List_App.MVVM.View.UC;
+﻿using Anime_List_App.MVVM.View.UC;
+using Anime_List_App.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +16,15 @@ using System.Windows.Shapes;
 
 namespace Anime_List_App.MVVM.View.Windows
 {
-    /// <summary>
-    /// Interaction logic for AutorizationWindow.xaml
-    /// </summary>
+
     public partial class AutorizationWindow : Window
     {
+        public static AutorizationWindowVM WindowVM { get; set; }
         public AutorizationWindow()
         {
             InitializeComponent();
-            FrameNavigator.SetWidnow(this);
-            ScreenFrame.Navigate(new LoginControl());// init base frame
+            WindowVM = new AutorizationWindowVM(this);
+            WindowVM.ChangeScreenFrame(new LoginControl());// base control is login            
         }
     }
 }

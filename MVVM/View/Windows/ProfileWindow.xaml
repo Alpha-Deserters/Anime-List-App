@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:Anime_List_App.MVVM.View.Windows"
         mc:Ignorable="d"
        Title="ProfileWindow" Height="740" Width="1920" ResizeMode="CanResize"  Background="#eaecef">
-    <Grid>
+    <StackPanel>
         <ContentPresenter x:Name="ToolBar"  Content="{Binding}" ContentTemplate="{StaticResource MainToolBar}"/>
+        <Border Height="25"/>
         <Frame x:Name="ScreenFrame" NavigationUIVisibility="Hidden"/>
-    </Grid>
+    </StackPanel>
 </Window>

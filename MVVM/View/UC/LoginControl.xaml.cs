@@ -1,7 +1,9 @@
 ﻿using Anime_List_App.Core.ExtensionClasses;
 using Anime_List_App.Core.Interfaces;
 using Anime_List_App.Core.Models.RootModels;
+using Anime_List_App.Core.StaticClasses;
 using Anime_List_App.MVVM.View.Windows;
+using Anime_List_App.MVVM.ViewModel;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,7 +14,7 @@ namespace Anime_List_App.MVVM.View.UC
     /// <summary>
     /// Interaction logic for LoginControl.xaml
     /// </summary>
-    public partial class LoginControl : UserControl, IFrameNavigator, ISourceInitializer
+    public partial class LoginControl : UserControl, ISourceInitializer
     {
         public LoginControl()
         {
@@ -22,18 +24,18 @@ namespace Anime_List_App.MVVM.View.UC
 
         public void InitSource()
         {
-            var images = new Dictionary<string, Image>()
+            var images = new Dictionary<Image, string>()
             {
-                {"ia1205", AutorizationImage },
-                {"login", UserImage },
-                {"lock", LockImage }
+                {AutorizationImage, "ia1205"},
+                {UserImage, "login"},
+                {LockImage, "lock"}
             };
-            this.SetImageSource(images);
+            this.SetIconSource(images);
         }
 
         public void NavigateToRegisterControl()
         {
-            this.NavigateTo(new RegisterControl());
+            AutorizationWindow.WindowVM.ChangeScreenFrame(new RegisterControl());
         }
 
         private void RegisterButttonClick(object sender, RoutedEventArgs e)
@@ -57,7 +59,7 @@ namespace Anime_List_App.MVVM.View.UC
                    PasswordTB.Text == user.Password)
                 {
                     new ProfileWindow(user).Show();
-                    FrameNavigator.Close();
+                    AutorizationWindow.WindowVM.CloseBaseWindow();
                 }
             }
         }

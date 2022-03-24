@@ -3,6 +3,8 @@ using Anime_List_App.Core.Interfaces;
 using Anime_List_App.Core.Model;
 using Anime_List_App.Core.Models.RootModels;
 using Anime_List_App.Core.StaticClasses;
+using Anime_List_App.MVVM.View.Windows;
+using Anime_List_App.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +25,7 @@ namespace Anime_List_App.MVVM.View.UC
     /// <summary>
     /// Interaction logic for RegisterControl.xaml
     /// </summary>
-    public partial class RegisterControl : UserControl, IFrameNavigator, ISourceInitializer
+    public partial class RegisterControl : UserControl, ISourceInitializer
     {
         public RegisterControl()
         {
@@ -33,16 +35,16 @@ namespace Anime_List_App.MVVM.View.UC
 
         public void InitSource()
         {
-            var images = new Dictionary<string, Image>()
+            var images = new Dictionary<Image, string>()
             {
-                {"2", RegImage }
+                { RegImage, "2"}
             };
-            this.SetImageSource(images);
+            this.SetIconSource(images);
         }
 
         public void NavigateToLoginControl()
         {
-            this.NavigateTo(new LoginControl());
+            AutorizationWindow.WindowVM.ChangeScreenFrame(new LoginControl());
         }
 
         private async void RegisterButtonClick(object sender, RoutedEventArgs e)
@@ -78,7 +80,7 @@ namespace Anime_List_App.MVVM.View.UC
             }
             else if (result.Data == false)
             {
-                MessageBox.Show("блять..");
+                MessageBox.Show("Неизвестная ошибка 0_0");
             }
         }
     }

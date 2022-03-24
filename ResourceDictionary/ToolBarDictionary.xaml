@@ -8,7 +8,7 @@
                     <Border Width="100"/>
                     <TextBlock Text="AKIRA PRODUCT" FontSize="20" Foreground="#fff" FontFamily="Segoe Print" FontWeight="Bold"/>
                     <Border Width="30"/>
-                    <Button Background="Transparent"   VerticalAlignment="Center" BorderThickness="0" >
+                    <Button Background="Transparent" VerticalAlignment="Center" BorderThickness="0" >
                         <StackPanel>
                             <TextBlock Text="Аниме" FontSize="20" FontFamily="Segoe Print" Foreground="#fff"/>
                         </StackPanel>
@@ -34,6 +34,7 @@
                     <Border Width="100"/>
                 </StackPanel>
             </Border>
+            <Border Height="5" Background="#ff5c57"/>
         </StackPanel>
     </DataTemplate>
 

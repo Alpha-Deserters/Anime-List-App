@@ -15,12 +15,12 @@ namespace Anime_List_App.Core.ExtensionClasses
         /// <summary>
         /// Sets the image path (Source)
         /// </summary>
-        public static void SetImageSource(this ISourceInitializer _, Dictionary<string, Image> items)
+        public static void SetIconSource(this ISourceInitializer _, Dictionary<Image, string> items)
         {
             foreach (var item in items)
             {
-                item.Value.Source = new BitmapImage(
-                    new Uri($"{LocalPath.IconsPath}{item.Key}.png"));
+                item.Key.Source = new BitmapImage(
+                    new Uri($"{LocalPath.IconsPath}{item.Value}.png"));
             }
         }
     }

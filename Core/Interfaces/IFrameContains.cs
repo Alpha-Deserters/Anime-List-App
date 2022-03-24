@@ -7,8 +7,8 @@ using System.Windows.Controls;
 
 namespace Anime_List_App.Core.Interfaces
 {
-    public interface IFrameNavigator
+    public interface IFrameContains
     {
-        public void NavigateTo(UserControl userControl);
+        public Frame TotalScreenFrame { get; set; } 
     }
 }

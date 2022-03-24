@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Anime_List_App.MVVM.View.Windows"
+        xmlns:local="clr-namespace:Anime_List_App.MVVM.View.Windows" xmlns:viewmodel1="clr-namespace:Anime_List_App.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="Autorization" Height="550" Width="600"  Background="#eaecef">
+        Title="AutorizationWindow" ResizeMode="NoResize" Height="550" Width="600" Background="#eaecef">
+        
     <Grid>
         <Frame x:Name="ScreenFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
